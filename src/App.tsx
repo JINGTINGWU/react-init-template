@@ -1,30 +1,37 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withTranslation } from 'react-i18next';
 import { Button } from '@material-ui/core';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import Login from './views/Login';
+import ForgotPassword from './views/ForgotPassword';
+import ResetPassword from './views/ResetPassword';
+import Page404 from './views/Page404';
+import Page500 from './views/Page500';
+import Main from './views/Main';
+
+const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+
 
 function App(props: any) {
   const { t } = props;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <HashRouter>
+      <Suspense fallback={loading()}>
+        <Switch>
+          <Route exact path="/login" render={props => <Login {...props}/>} />
+          <Route exact path="/forgot-password" render={props => <ForgotPassword {...props}/>} />
+          <Route exact path="/reset-password" render={props => <ResetPassword {...props}/>} />
+
+          <Route exact path="/404" render={props => <Page404 {...props}/>} />
+          <Route exact path="/500" render={props => <Page500 {...props}/>} />
+
+          <Route exact path="/" render={props => <Main {...props}/>} />
         
-        <Button color="primary">{t('language')}</Button>
-      </header>
-    </div>
+        </Switch>
+      </Suspense>
+    </HashRouter>
   );
 }
 
