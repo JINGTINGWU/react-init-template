@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withTranslation } from 'react-i18next';
+import { Button } from '@material-ui/core';
 
 function App(props: any) {
   const { t } = props;
@@ -20,7 +21,8 @@ function App(props: any) {
         >
           Learn React
         </a>
-        {t('language')}
+        
+        <Button color="primary">{t('language')}</Button>
       </header>
     </div>
   );
