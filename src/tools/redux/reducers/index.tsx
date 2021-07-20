@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-import authorityReducer from './authorityReducer'
-import userReducer from './userReducer'
+import showAllAuthorityReducer from './authority/showAllAuthorityReducer';
+import updateUserManageAuthorityReducer from './authority/updateUserManageAuthorityReducer';
+
 export default combineReducers({
-    authority: authorityReducer,
-    user: userReducer
+    showAllAuthority: showAllAuthorityReducer,
+    updateUserManageAuthority: updateUserManageAuthorityReducer
 })

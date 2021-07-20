@@ -7,7 +7,7 @@ function Login(props: any) {
   const { t } = props;
   return (
     <div>
-      <Button>登入</Button>
+      <Button>{t('query')}</Button>
     </div>
   );
 }
