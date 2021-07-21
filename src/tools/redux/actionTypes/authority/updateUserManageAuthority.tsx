@@ -4,20 +4,20 @@ interface UpdateUserManageAuthorityI {
     type: String,
     payload: {
         userManage: {
-            add: false,
-            modify: false,
-            remove: false
+            add: boolean,
+            modify: boolean,
+            remove: boolean
         }
     }
 }
 
-export const updateUserManageAuthority = (): UpdateUserManageAuthorityI => ({
+export const updateUserManageAuthority = (add: boolean, modify: boolean, remove: boolean): UpdateUserManageAuthorityI => ({
     type: UPDATE_USER_MANAGE_AUTHORITY,
     payload: {
         userManage: {
-            add: false,
-            modify: false,
-            remove: false
+            add,
+            modify,
+            remove
         }
     }
 });

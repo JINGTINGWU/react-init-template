@@ -1,3 +1,4 @@
+import produce from "immer"
 import initState from '../../states/authority';
 
 import { updateUserManageAuthorityActionType, UPDATE_USER_MANAGE_AUTHORITY } from '../../actionTypes/authority/updateUserManageAuthority';
@@ -7,8 +8,9 @@ const reducer = (state = initState, action: updateUserManageAuthorityActionType)
     let newState = state;
     switch (action.type) {
         case UPDATE_USER_MANAGE_AUTHORITY:
-            newState['userManage'] = action.payload.userManage;
-            return {...newState}
+            return produce(state, draft => {
+                draft["userManage"] = action.payload.userManage
+            })
         default:
             return state
     }

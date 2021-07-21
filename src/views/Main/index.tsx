@@ -1,32 +1,50 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect, useReducer } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Button } from '@material-ui/core';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+
 import { storeTypes } from '../../tools/redux/store'; 
+import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authority/updateUserManageAuthority'; 
+import reducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
+import authorityState from '../../tools/redux/states/authority';
 
 function Main(props: any) {
   const { t } = props;
-
-  const dispatch = useDispatch();
-
-  const userManage = useSelector((state: storeTypes) => state.showAllAuthority.userManage);
+  const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(reducer, authorityState);
 
   return (
     <div>
-      <Button variant="outlined" color="secondary">主要畫面</Button>
+      <h4>主要畫面</h4>
       <br/>
       <br/>
-      <Button>{t('language')}</Button>
+      {t('language')}
       <br/>
-      <Button variant="outlined" color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</Button>
-      <Button variant="contained" color="secondary" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</Button>
+      <button color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
+      <button color="secondary" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
       <br/>
       <br/>
+      <br />
+      <br />
+      {updateUserManageAuthorityState.userManage.add ? "T" : "F"}
       <br/>
-      {userManage}
+      {updateUserManageAuthorityState.userManage.modify ? "T" : "F"} 
       <br/>
-      <Button variant="outlined" color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('submit')}</Button>
+      {updateUserManageAuthorityState.userManage.remove ? "T" : "F"} 
+      <br/>
+      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+        !updateUserManageAuthorityState.userManage.add,
+        updateUserManageAuthorityState.userManage.modify,
+        updateUserManageAuthorityState.userManage.remove
+      ))}>add</button>
+      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+        updateUserManageAuthorityState.userManage.add,
+        !updateUserManageAuthorityState.userManage.modify,
+        updateUserManageAuthorityState.userManage.remove
+      ))}>modify</button>
+      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+        updateUserManageAuthorityState.userManage.add,
+        updateUserManageAuthorityState.userManage.modify,
+        !updateUserManageAuthorityState.userManage.remove
+      ))}>remove</button>
     </div>
   );
 }

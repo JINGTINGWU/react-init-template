@@ -2,7 +2,6 @@ import React, {Suspense} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withTranslation } from 'react-i18next';
-import { Button } from '@material-ui/core';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Login from './views/Login';
 import ForgotPassword from './views/ForgotPassword';
