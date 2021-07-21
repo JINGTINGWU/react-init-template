@@ -7,19 +7,23 @@ import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authori
 import reducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
 import authorityState from '../../tools/redux/states/authority';
 
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
 function Main(props: any) {
   const { t } = props;
   const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(reducer, authorityState);
 
   return (
     <div>
+      <Header />
       <h4>主要畫面</h4>
       <br/>
       <br/>
       {t('language')}
       <br/>
-      <button color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
-      <button color="secondary" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
+      <button type="button" className="btn btn-primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
+      <button type="button" className="btn btn-success" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
       <br/>
       <br/>
       <br />
@@ -45,6 +49,8 @@ function Main(props: any) {
         updateUserManageAuthorityState.userManage.modify,
         !updateUserManageAuthorityState.userManage.remove
       ))}>remove</button>
+
+      <Footer />
     </div>
   );
 }
