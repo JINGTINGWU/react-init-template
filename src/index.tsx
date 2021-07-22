@@ -1,12 +1,13 @@
 import React, {Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import "./style.scss";
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './tools/i18n';
 import { Provider } from 'react-redux';
 import store from './tools/redux/store';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
