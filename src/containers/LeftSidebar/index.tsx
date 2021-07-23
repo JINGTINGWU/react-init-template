@@ -6,9 +6,10 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Sidebar: React.FC<Props> = ({show, children}) => { 
+const LeftSidebar: React.FC<Props> = ({show, children}) => { 
+  console.log('show:' + show);
   return (
-    /* This `show` prop controls all nested `Transition.Child` components. */
+    
     <Transition
           show={show}
           enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -25,4 +26,4 @@ const Sidebar: React.FC<Props> = ({show, children}) => {
     </Transition>
   );
 }
-export default Sidebar;
+export default LeftSidebar;

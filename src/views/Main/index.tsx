@@ -4,34 +4,38 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { storeTypes } from '../../tools/redux/store'; 
 import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authority/updateUserManageAuthority'; 
-import reducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
+import updateUserManageAuthorityReducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
 import authorityState from '../../tools/redux/states/authority';
 
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 
 import { Dialog, Transition } from '@headlessui/react';
-import Sidebar from '../../containers/Sidebar';
+import LeftSidebar from '../../containers/LeftSidebar';
+
+
+import { openLeftMenu } from '../../tools/redux/actionTypes/operation/openLeftMenu';
+import openLeftMenuReducer from '../../tools/redux/reducers/operation/openLeftMenuReducer';
+import operationState from '../../tools/redux/states/operation';
+
+import { useSelector } from 'react-redux'
 
 function Main(props: any) {
   const { t } = props;
-  const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(reducer, authorityState);
-
-  const [open, setOpen] = useState(true)
+  const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(updateUserManageAuthorityReducer, authorityState);
+  const isOpenLeftMenu = useSelector((state: any) => state.operation.openLeftMenu);
 
   return (
-    <>
-      {/* <Header />
-      <h4>主要畫面</h4>
-      <br/>
+    <div className="flex flex-col h-screen justify-between">
+      <Header />
+      <main className="bg-scroll">
+
+      <h4>isOpenLeftMenu: {new Boolean(isOpenLeftMenu).toString()}</h4>
       <br/>
       {t('language')}
       <br/>
       <button  color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
       <button type="button" className="btn btn-success" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
-      <br/>
-      <br/>
-      <br />
       <br />
       {updateUserManageAuthorityState.userManage.add ? "T" : "F"}
       <br/>
@@ -53,11 +57,9 @@ function Main(props: any) {
         updateUserManageAuthorityState.userManage.add,
         updateUserManageAuthorityState.userManage.modify,
         !updateUserManageAuthorityState.userManage.remove
-      ))}>remove</button> */}
+      ))}>remove</button>
 
 
-
-<button  color="primary" onClick={()=>setOpen(!open)}>open:{new Boolean(open).toString()}</button>
 
 
         {/* <Transition
@@ -76,7 +78,7 @@ function Main(props: any) {
          
         </Transition> */}
 
-        <Sidebar show={open}>
+        <LeftSidebar show={isOpenLeftMenu}>
           
             I will fade in and out
     
@@ -84,10 +86,10 @@ function Main(props: any) {
 
 
 
-        </Sidebar>
-
+        </LeftSidebar>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
