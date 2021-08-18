@@ -7,11 +7,9 @@ import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authori
 import updateUserManageAuthorityReducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
 import authorityState from '../../tools/redux/states/authority';
 
-import Header from '../../containers/Header';
-import Footer from '../../containers/Footer';
+import Header from '../Header';
+import Footer from '../Footer';
 
-import { Dialog, Transition } from '@headlessui/react';
-import LeftSidebar from '../../containers/LeftSidebar';
 
 
 import { openLeftMenu } from '../../tools/redux/actionTypes/operation/openLeftMenu';
@@ -31,11 +29,12 @@ function Main(props: any) {
       <main className="bg-scroll">
 
       <h4>isOpenLeftMenu: {new Boolean(isOpenLeftMenu).toString()}</h4>
+      
       <br/>
       {t('language')}
       <br/>
-      <button  color="primary" onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
-      <button type="button" className="btn btn-success" onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
+      <button className="bg-blue-500 text-white hover:bg-blue-700 rounded py-2 px-4 shadow " onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
+      <button className="bg-red-500 text-white hover:bg-red-700 rounded py-2 px-4 shadow " onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
       <br />
       {updateUserManageAuthorityState.userManage.add ? "T" : "F"}
       <br/>
@@ -43,17 +42,26 @@ function Main(props: any) {
       <br/>
       {updateUserManageAuthorityState.userManage.remove ? "T" : "F"} 
       <br/>
-      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
-        !updateUserManageAuthorityState.userManage.add,
-        updateUserManageAuthorityState.userManage.modify,
-        updateUserManageAuthorityState.userManage.remove
-      ))}>add</button>
-      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+      <button 
+        className="btn btn-primary bg-pink"
+        onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+          !updateUserManageAuthorityState.userManage.add,
+          updateUserManageAuthorityState.userManage.modify,
+          updateUserManageAuthorityState.userManage.remove
+        ))}>
+          add
+      </button> 
+
+      <button 
+        className="btn btn-secondary" 
+        onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
         updateUserManageAuthorityState.userManage.add,
         !updateUserManageAuthorityState.userManage.modify,
         updateUserManageAuthorityState.userManage.remove
       ))}>modify</button>
-      <button color="primary" onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
+      <button
+        className="btn btn-accent"
+        onClick={()=>dispatchUpdateUserManageAuthority(updateUserManageAuthority(
         updateUserManageAuthorityState.userManage.add,
         updateUserManageAuthorityState.userManage.modify,
         !updateUserManageAuthorityState.userManage.remove
@@ -78,15 +86,7 @@ function Main(props: any) {
          
         </Transition> */}
 
-        <LeftSidebar show={isOpenLeftMenu}>
-          
-            I will fade in and out
-    
-         
 
-
-
-        </LeftSidebar>
       </main>
       <Footer />
     </div>

@@ -1,29 +1,18 @@
 import React from "react";
-import { Transition } from '@headlessui/react'
-
+import './index.css';
 interface Props {
-  show: boolean;
   children?: React.ReactNode;
 }
 
-const LeftSidebar: React.FC<Props> = ({show, children}) => { 
-  console.log('show:' + show);
+const LeftSidebar: React.FC<Props> = ({children}) => { 
   return (
-    
-    <Transition
-          show={show}
-          enter="transform transition ease-in-out duration-500 sm:duration-700"
-          enterFrom="-translate-x-full"
-          enterTo="translate-x-0"
-          leave="transform transition ease-in-out duration-500 sm:duration-700"
-          leaveFrom="translate-x-0"
-          leaveTo="-translate-x-full"
-          
-        >
-      <div style={{backgroundColor: 'pink', width: '33%'}}>
-       {children}
-      </div>
-    </Transition>
+    <div id="mySidebar" className="leftSidebar">
+      <a href="javascript:void(0)" className="closebtn" onClick={() => {}}>×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
   );
 }
 export default LeftSidebar;

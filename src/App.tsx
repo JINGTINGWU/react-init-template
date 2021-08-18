@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import { withTranslation } from 'react-i18next';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Login from './views/Login';
-import ForgotPassword from './views/ForgotPassword';
-import ResetPassword from './views/ResetPassword';
-import Page404 from './views/Page404';
-import Page500 from './views/Page500';
-import Main from './views/Main';
+import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
+import Page404 from './pages/Page404';
+import Page500 from './pages/Page500';
+import Main from './containers/Main';
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 

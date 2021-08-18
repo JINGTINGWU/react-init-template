@@ -3,7 +3,6 @@ import initState from '../../states/operation';
 import { openLeftMenuActionType, OPEN_LEFT_MENU } from '../../actionTypes/operation/openLeftMenu';
 
 const reducer = (state = initState, action: openLeftMenuActionType) => {
-    console.log(action);
     let newState = state;
     switch (action.type) {
         case OPEN_LEFT_MENU:
