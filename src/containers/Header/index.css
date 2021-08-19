@@ -1,0 +1,10 @@
+.header {
+    overflow: hidden;
+    background-color: #46d6be;
+    padding: 10px 10px;
+    height: 3.5rem;
+}
+  
+.header-right {
+    float: right;
+}

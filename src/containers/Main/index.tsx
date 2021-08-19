@@ -1,53 +1,42 @@
 import React, {Fragment, useState, Suspense, useEffect, useReducer } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authority/updateUserManageAuthority'; 
-import updateUserManageAuthorityReducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
-import authorityState from '../../tools/redux/states/authority';
-
 import Header from '../Header';
 import Footer from '../Footer';
 
 import LeftSidebar from '../LeftSidebar';
-import { Button } from 'react-bootstrap';
 
-import openLeftMenuReducer from '../../tools/redux/reducers/operation/openLeftMenuReducer'; 
-import operationState from '../../tools/redux/states/operation';
+import { useRecoilState } from 'recoil';
+import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 
-import MenuIconButton from '../../components/MenuIconButton';
-
-import { useSelector } from 'react-redux';
-import { useStore } from "react-redux";
+import './index.css';
 
 function Main(props: any) {
   const { t } = props;
-
-  const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(openLeftMenuReducer, operationState);
-  const isOpenLeftMenu = useSelector((state: any) => state.operation.openLeftMenu);
-
-
-
-  
-console.log(`openLeftMenu:${updateUserManageAuthorityState.openLeftMenu}`);
-console.log(`isOpenLeftMenu:${isOpenLeftMenu}`);
+  const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
 
   return (
-    <main className="flex flex-col h-screen justify-between">
+    <div id="main">
       <Header />
-      <div>
+      <div id="sidebar-with-content">
         <LeftSidebar />
 
-        <div id="main" className={`${updateUserManageAuthorityState.openLeftMenu? 'openLeftSidebar': 'closeLeftSidebar'}`}>
-          這是測試{updateUserManageAuthorityState.openLeftMenu}
-          <h2>Collapsed Sidebar</h2>aa
-          <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <button onClick={()=>{
-            
-          }}>測試</button>
+        <div id="main-content" >
+          這是測試{`...${isOpenSidebar}...`}
+          <h2>Collapsed Sidebar{isOpenSidebar}</h2>aa
+          <p>1.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>2.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>3.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>4.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>5.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>6.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>7.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>8.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+          <p>9.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
         </div>
       </div>
       <Footer />
-    </main>
+    </div>
   );
 }
 

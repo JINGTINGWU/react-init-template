@@ -1,14 +1,19 @@
 import React, {Suspense} from 'react';
 import { withTranslation } from 'react-i18next';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+
+
+import { useRecoilState } from 'recoil';
+import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 
 function Page404(props: any) {
   const { t } = props;
+
+  const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
+
   return (
     <div>
-      Page404
+      Page404{`...${isOpenSidebar}...`}
     </div>
   );
 }

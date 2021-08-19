@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { withTranslation } from 'react-i18next';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import { RecoilRoot, atom, useRecoilState } from 'recoil';
+
 import Login from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
@@ -16,22 +18,27 @@ const loading = () => <div className="animated fadeIn pt-3 text-center">Loading.
 function App(props: any) {
   const { t } = props;
   return (
-    <HashRouter>
-      <Suspense fallback={loading()}>
-        <Switch>
-          <Route exact path="/login" render={props => <Login {...props}/>} />
-          <Route exact path="/forgot-password" render={props => <ForgotPassword {...props}/>} />
-          <Route exact path="/reset-password" render={props => <ResetPassword {...props}/>} />
+    <RecoilRoot>
+      <HashRouter>
+        <Suspense fallback={loading()}>
+          <Switch>
+            <Route exact path="/login" render={props => <Login {...props}/>} />
+            <Route exact path="/forgot-password" render={props => <ForgotPassword {...props}/>} />
+            <Route exact path="/reset-password" render={props => <ResetPassword {...props}/>} />
 
-          <Route exact path="/404" render={props => <Page404 {...props}/>} />
-          <Route exact path="/500" render={props => <Page500 {...props}/>} />
+            <Route exact path="/404" render={props => <Page404 {...props}/>} />
+            <Route exact path="/500" render={props => <Page500 {...props}/>} />
 
-          <Route exact path="/" render={props => <Main {...props}/>} />
-        
-        </Switch>
-      </Suspense>
-    </HashRouter>
+            <Route exact path="/" render={props => <Main {...props}/>} />
+          
+          </Switch>
+        </Suspense>
+      </HashRouter>
+    </RecoilRoot>
   );
 }
+
+
+
 
 export default withTranslation('common')(App);

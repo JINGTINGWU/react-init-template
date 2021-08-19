@@ -1,10 +1,8 @@
 import React, { useReducer } from "react";
 import './index.css';
 
-import { openLeftMenu } from '../../tools/redux/actionTypes/operation/openLeftMenu'; 
-import openLeftMenuReducer from '../../tools/redux/reducers/operation/openLeftMenuReducer'; 
-import operationState from '../../tools/redux/states/operation';
-
+import { useRecoilState } from 'recoil';
+import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 
 interface Props {
     color?: string;
@@ -15,14 +13,12 @@ const MenuIconButton: React.FC<Props> = ({
     color,
     onClick
 }) => {
+    const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
 
-    const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(openLeftMenuReducer, operationState);
     let barColor = color ? color: '#333';
     return (
-        <div className={`menuIconButton ${updateUserManageAuthorityState.openLeftMenu? 'change': ''}`} onClick={() => {
-            dispatchUpdateUserManageAuthority(openLeftMenu(
-                !updateUserManageAuthorityState.openLeftMenu
-              ))
+        <div className={`menuIconButton ${isOpenSidebar? 'change': ''}`} onClick={() => {
+            setOpenSidebar(!isOpenSidebar);
         }}>
             <div className="bar1" style={{backgroundColor: barColor}}></div>
             <div className="bar2" style={{backgroundColor: barColor}}></div>

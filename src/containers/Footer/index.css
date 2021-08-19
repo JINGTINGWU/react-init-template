@@ -1,0 +1,11 @@
+.footer {
+    overflow: hidden;
+    background-color: #9eec9e;
+    padding: 10px 10px;
+    height: 2.5rem;
+    margin-top: -2.5rem; /*隨footer高度需做調整*/
+}
+  
+.footer-right {
+    float: right;
+}

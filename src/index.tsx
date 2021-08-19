@@ -5,22 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './tools/i18n';
-import { Provider } from 'react-redux';
-import store from './tools/redux/store';
-import { RecoilRoot, atom, useRecoilState } from 'recoil';
 import 'bootstrap/scss/bootstrap.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
-        <Suspense fallback={<h1>Loading profile...</h1>}>
-          <RecoilRoot>
-            <App />
-          </RecoilRoot>
-        </Suspense>
-      </I18nextProvider>
-    </Provider>
+    <I18nextProvider i18n={i18n}>
+      <Suspense fallback={<h1>Loading profile...</h1>}>
+        <App />
+      </Suspense>
+    </I18nextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

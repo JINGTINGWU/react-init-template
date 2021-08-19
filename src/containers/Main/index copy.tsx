@@ -2,21 +2,8 @@ import React, {Fragment, useState, Suspense, useEffect, useReducer } from 'react
 import { withTranslation } from 'react-i18next';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import { storeTypes } from '../../tools/redux/store'; 
-import { updateUserManageAuthority } from '../../tools/redux/actionTypes/authority/updateUserManageAuthority'; 
-import updateUserManageAuthorityReducer from '../../tools/redux/reducers/authority/updateUserManageAuthorityReducer';
-import authorityState from '../../tools/redux/states/authority';
-
 import Header from '../Header';
 import Footer from '../Footer';
-
-
-
-import { openLeftMenu } from '../../tools/redux/actionTypes/operation/openLeftMenu';
-import openLeftMenuReducer from '../../tools/redux/reducers/operation/openLeftMenuReducer';
-import operationState from '../../tools/redux/states/operation';
-
-import { useSelector } from 'react-redux'
 
 function Main(props: any) {
   const { t } = props;
@@ -36,7 +23,7 @@ function Main(props: any) {
       <button className="bg-blue-500 text-white hover:bg-blue-700 rounded py-2 px-4 shadow " onClick={()=>props.i18n.changeLanguage('en-US')}>{t('en-US')}</button>
       <button className="bg-red-500 text-white hover:bg-red-700 rounded py-2 px-4 shadow " onClick={()=>props.i18n.changeLanguage('zh-TW')}>{t('zh-TW')}</button>
       <br />
-      {updateUserManageAuthorityState.userManage.add ? "T" : "F"}
+      {/* {updateUserManageAuthorityState.userManage.add ? "T" : "F"}
       <br/>
       {updateUserManageAuthorityState.userManage.modify ? "T" : "F"} 
       <br/>
@@ -65,7 +52,7 @@ function Main(props: any) {
         updateUserManageAuthorityState.userManage.add,
         updateUserManageAuthorityState.userManage.modify,
         !updateUserManageAuthorityState.userManage.remove
-      ))}>remove</button>
+      ))}>remove</button> */}
 
 
 

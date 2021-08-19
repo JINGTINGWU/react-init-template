@@ -1,7 +1,23 @@
-#main.openLeftSidebar{
-  margin-left : 250px;
+#main {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    
 }
 
-#main.closeLeftSidebar{
-  margin-left : 0px;
+#sidebar-with-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    height: calc(100vh - 6rem);
+}
+
+#main-content {
+    transition: margin-left .5s;
+    padding: 16px;
+    height: calc(100vh - 6rem);
+    background-color: blue;
+    overflow: auto;
 }
