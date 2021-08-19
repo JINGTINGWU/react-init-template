@@ -11,7 +11,6 @@ import routes from "../../tools/routes";
 import './index.css';
 
 import { Dropdown } from 'react-bootstrap';
-import { FaLanguage, FaUser } from 'react-icons/fa';
 
 function Main(props: any) {
   const { t } = props;
@@ -28,7 +27,7 @@ function Main(props: any) {
         <div id="main-content" >
         <Dropdown>
         <Dropdown.Toggle variant="outline-primary" id="dropdown-user-info-a"  style={{border: 0}}>
-          <FaUser />
+        <i className="bi bi-person"></i>
         </Dropdown.Toggle>
 
         <Dropdown.Menu style={{zIndex: 200}}>
