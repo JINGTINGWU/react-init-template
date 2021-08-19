@@ -1,6 +1,6 @@
 import React, { Fragment  } from "react";
 
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown, OverlayTrigger, Popover, Button } from 'react-bootstrap';
 
 
 
@@ -14,9 +14,9 @@ const Header = () => {
     <header className="header">
       <MenuIconButton color={'green'}/>
       <div className="header-right">
-      {/* <Dropdown>
+      <Dropdown>
         <Dropdown.Toggle variant="outline-primary" id="dropdown-language"  style={{border: 0}}>
-          <FaLanguage />
+        <i className="bi bi-person"></i>
         </Dropdown.Toggle>
 
         <Dropdown.Menu style={{zIndex: 100}}>
@@ -24,7 +24,7 @@ const Header = () => {
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </Dropdown.Menu>
-      </Dropdown> */}
+      </Dropdown>
 
       <Dropdown>
         <Dropdown.Toggle variant="outline-primary" id="dropdown-user-info"  style={{border: 0}}>
@@ -37,6 +37,9 @@ const Header = () => {
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+
+
+
       </div>
     </header>
   );

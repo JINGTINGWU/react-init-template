@@ -19,40 +19,30 @@ function Main(props: any) {
 
   return (
     <div id="main">
+      <div style={{position: 'relative', zIndex: 999}}>
       <Header />
-      <div id="sidebar-with-content">
-      <Router>
-        <LeftSidebar children={routes}/>
+      </div>
+      <div id="sidebar-with-content"  style={{position: 'relative', zIndex: -999}}>
+        <Router>
+          
+          <LeftSidebar children={routes}/>
 
-        <div id="main-content" >
-        <Dropdown>
-        <Dropdown.Toggle variant="outline-primary" id="dropdown-user-info-a"  style={{border: 0}}>
-        <i className="bi bi-person"></i>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu style={{zIndex: 200}}>
-          <Dropdown.Item href="/#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="/#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="/#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-
-          <Suspense fallback={loading()}>
-            <Switch>
-              {routes.map((route, index) => (
-                // Render more <Route>s with the same paths as
-                // above, but different components this time.
-                <Route
-                  key={index}
-                  path={route.path}
-                  children={<route.main />}
-                />
-              ))}
-              <Redirect from="/" to="/set-bct1-parameter" />
-            </Switch>
-          </Suspense>
-        </div>
+          <div id="main-content" >
+            {/* <Suspense fallback={loading()}>
+              <Switch>
+                {routes.map((route, index) => (
+                  // Render more <Route>s with the same paths as
+                  // above, but different components this time.
+                  <Route
+                    key={index}
+                    path={route.path}
+                    children={<route.main />}
+                  />
+                ))}
+                <Redirect from="/" to="/set-bct1-parameter" />
+              </Switch>
+            </Suspense> */}
+          </div>
         </Router>
       </div>
       <Footer />
