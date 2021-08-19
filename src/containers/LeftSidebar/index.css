@@ -1,12 +1,11 @@
 #leftSidebar {
     height: calc(100vh - 6rem);
-    width: 0;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 1rem;
 }
 
 #leftSidebar a {
@@ -20,4 +19,12 @@
 
 #leftSidebar a:hover {
     color: #f1f1f1;
+}
+
+#leftSidebar.open {
+    width: var(--left-sidebar-width, 0rem);
+}
+
+#leftSidebar.close {
+    width: 0rem;
 }

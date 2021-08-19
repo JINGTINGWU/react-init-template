@@ -3,5 +3,7 @@
     "en-US": "English",
     "zh-TW": "繁體中文",
     "submit": "Submit",
-    "query": "Query"
+    "query": "Query",
+    "set-bct1-parameter": "BCT 1 Parameters Setter",
+    "set-bct2-parameter": "BCT 2 Parameters Setter"
   }

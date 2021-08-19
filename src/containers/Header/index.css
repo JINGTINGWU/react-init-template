@@ -3,8 +3,11 @@
     background-color: #46d6be;
     padding: 10px 10px;
     height: 3.5rem;
+    z-index: 100;
 }
   
 .header-right {
     float: right;
+    display: flex;
+    flex-direction: row;
 }

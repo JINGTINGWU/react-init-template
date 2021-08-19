@@ -1,39 +1,60 @@
-import React, {Fragment, useState, Suspense, useEffect, useReducer } from 'react';
+import React, { Suspense } from 'react';
 import { withTranslation } from 'react-i18next';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import Header from '../Header';
 import Footer from '../Footer';
-
 import LeftSidebar from '../LeftSidebar';
-
 import { useRecoilState } from 'recoil';
 import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
-
+import routes from "../../tools/routes";
 import './index.css';
+
+import { Dropdown } from 'react-bootstrap';
+import { FaLanguage, FaUser } from 'react-icons/fa';
 
 function Main(props: any) {
   const { t } = props;
-  const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
+
+  const loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
   return (
     <div id="main">
       <Header />
       <div id="sidebar-with-content">
-        <LeftSidebar />
+      <Router>
+        <LeftSidebar children={routes}/>
 
         <div id="main-content" >
-          這是測試{`...${isOpenSidebar}...`}
-          <h2>Collapsed Sidebar{isOpenSidebar}</h2>aa
-          <p>1.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>2.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>3.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>4.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>5.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>6.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>7.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>8.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-          <p>9.Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+        <Dropdown>
+        <Dropdown.Toggle variant="outline-primary" id="dropdown-user-info-a"  style={{border: 0}}>
+          <FaUser />
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu style={{zIndex: 200}}>
+          <Dropdown.Item href="/#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item href="/#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="/#/action-3">Something else</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
+
+          <Suspense fallback={loading()}>
+            <Switch>
+              {routes.map((route, index) => (
+                // Render more <Route>s with the same paths as
+                // above, but different components this time.
+                <Route
+                  key={index}
+                  path={route.path}
+                  children={<route.main />}
+                />
+              ))}
+              <Redirect from="/" to="/set-bct1-parameter" />
+            </Switch>
+          </Suspense>
         </div>
+        </Router>
       </div>
       <Footer />
     </div>

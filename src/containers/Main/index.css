@@ -3,8 +3,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-    
 }
 
 #sidebar-with-content {
@@ -12,12 +10,13 @@
     flex-grow: 1;
     flex-direction: row;
     height: calc(100vh - 6rem);
+    z-index: 11;
 }
 
 #main-content {
     transition: margin-left .5s;
     padding: 16px;
     height: calc(100vh - 6rem);
-    background-color: blue;
     overflow: auto;
+    z-index: 10;
 }

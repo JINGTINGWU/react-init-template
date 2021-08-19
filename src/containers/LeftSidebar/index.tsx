@@ -1,32 +1,34 @@
 import React from "react";
 
+import { withTranslation } from 'react-i18next';
+
 import { useRecoilState } from 'recoil';
 import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 
 import './index.css';
+import routes from "../../tools/routes";
 
+import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
 interface Props {
-  children?: React.ReactNode;
+  t?: any;
 }
 
-const LeftSidebar: React.FC<Props> = ({children}) => { 
+const LeftSidebar: React.FC<Props> = ({t}) => { 
 
   const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
 
   return (
-    <div id="leftSidebar" className="leftSidebar" style={{width: isOpenSidebar? '250px': '0px'}}>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
-      <a href="#">Contact</a>
+    <div id="leftSidebar" className={`leftSidebar ${isOpenSidebar? 'open': 'close'}`}>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {routes.map((route, index) => (
+          <li key={`left-bar-li-${index}`}>
+            <Link to={route.path}>{t(route.name)}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
-export default LeftSidebar;
+
+export default withTranslation('common')(LeftSidebar);

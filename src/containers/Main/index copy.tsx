@@ -7,16 +7,13 @@ import Footer from '../Footer';
 
 function Main(props: any) {
   const { t } = props;
-  const [updateUserManageAuthorityState, dispatchUpdateUserManageAuthority] = useReducer(updateUserManageAuthorityReducer, authorityState);
-  const isOpenLeftMenu = useSelector((state: any) => state.operation.openLeftMenu);
+
 
   return (
     <div className="flex flex-col h-screen justify-between">
       <Header />
       <main className="bg-scroll">
 
-      <h4>isOpenLeftMenu: {new Boolean(isOpenLeftMenu).toString()}</h4>
-      
       <br/>
       {t('language')}
       <br/>

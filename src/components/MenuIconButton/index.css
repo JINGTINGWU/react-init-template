@@ -13,8 +13,8 @@
   }
   
   .menuIconButton.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-0.5625rem, 0.375rem);
-    transform: rotate(-45deg) translate(-0.5625rem, 0.375rem);
+    -webkit-transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+    transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
   }
   
   .menuIconButton.change .bar2 {opacity: 0;}

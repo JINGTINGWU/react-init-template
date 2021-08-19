@@ -3,5 +3,7 @@
     "en-US": "English",
     "zh-TW": "繁體中文",
     "submit": "送出",
-    "query": "查詢"
+    "query": "查詢",
+    "set-bct1-parameter": "BCT 1 參數設定設定",
+    "set-bct2-parameter": "BCT 2 參數設定設定"
   }
