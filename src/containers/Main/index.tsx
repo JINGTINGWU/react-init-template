@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { withTranslation } from 'react-i18next';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch, Link } from 'react-router-dom';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -24,11 +24,9 @@ function Main(props: any) {
       </div>
       <div id="sidebar-with-content"  style={{position: 'relative', zIndex: -999}}>
         <Router>
-          
           <LeftSidebar children={routes}/>
-
           <div id="main-content" >
-            {/* <Suspense fallback={loading()}>
+            <Suspense fallback={loading()}>
               <Switch>
                 {routes.map((route, index) => (
                   // Render more <Route>s with the same paths as
@@ -39,9 +37,9 @@ function Main(props: any) {
                     children={<route.main />}
                   />
                 ))}
-                <Redirect from="/" to="/set-bct1-parameter" />
+                <Redirect from="/" to="/my-info" />
               </Switch>
-            </Suspense> */}
+            </Suspense>
           </div>
         </Router>
       </div>

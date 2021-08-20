@@ -5,5 +5,7 @@
     "submit": "送出",
     "query": "查詢",
     "set-bct1-parameter": "BCT 1 參數設定設定",
-    "set-bct2-parameter": "BCT 2 參數設定設定"
+    "set-bct2-parameter": "BCT 2 參數設定設定",
+    "my-info": "我的資訊",
+    "logout": "登出"
   }

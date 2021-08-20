@@ -5,5 +5,7 @@
     "submit": "Submit",
     "query": "Query",
     "set-bct1-parameter": "BCT 1 Parameters Setter",
-    "set-bct2-parameter": "BCT 2 Parameters Setter"
+    "set-bct2-parameter": "BCT 2 Parameters Setter",
+    "my-info": "My Info.",
+    "logout": "Logout"
   }

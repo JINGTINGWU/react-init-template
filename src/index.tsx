@@ -7,12 +7,10 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './tools/i18n';
 import 'bootstrap/scss/bootstrap.scss';
 
-const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
-
 ReactDOM.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <Suspense fallback={loading}>
+      <Suspense fallback={<div className="animated fadeIn pt-3 text-center">Loading...</div>}>
         <App />
       </Suspense>
     </I18nextProvider>
