@@ -23,11 +23,11 @@ console.log(i18n);
           </Dropdown.Toggle>
 
           <Dropdown.Menu style={{ zIndex: 100 }}>
-            <Dropdown.Header ><span className="material-icons-outlined">translate</span></Dropdown.Header>
+            <Dropdown.Header ><i className="bi bi-translate"></i></Dropdown.Header>
             <Dropdown.Item onClick={e => i18n.changeLanguage('en-US')}>
               <Row>
                 <Col xs="4" className="text-right">
-                  <span className="material-icons-outlined" hidden={'en-US' !== i18n.language}>done</span>
+                  <i className="bi bi-check-lg" hidden={'en-US' !== i18n.language}></i>
                 </Col>
                 <Col xs="8">{t('en-US')}</Col>
               </Row>
@@ -35,7 +35,7 @@ console.log(i18n);
             <Dropdown.Item onClick={e => i18n.changeLanguage('zh-TW')}>
               <Row>
                 <Col xs="4" className="text-right">
-                  <span className="material-icons-outlined" hidden={'zh-TW' !== i18n.language}>done</span>
+                  <i className="bi bi-check-lg" hidden={'zh-TW' !== i18n.language}></i>
                 </Col>
                 <Col xs="8">{t('zh-TW')}</Col>
               </Row>
@@ -44,7 +44,7 @@ console.log(i18n);
             <Dropdown.Item href="#/action-3">
               <Row>
                 <Col xs="4" className="text-right">
-                  <span className="material-icons-outlined">info</span>
+                  <i className="bi bi-info-circle"></i>
                 </Col>
                 <Col xs="8">{t('my-info')}</Col>
               </Row>
@@ -53,7 +53,7 @@ console.log(i18n);
             <Dropdown.Item href="#/action-3">
               <Row>
                 <Col xs="4" className="text-right">
-                  <span className="material-icons-outlined">logout</span>
+                  <i className="bi bi-x-circle-fill"></i>
                 </Col>
                 <Col xs="8">{t('logout')}</Col>
               </Row>

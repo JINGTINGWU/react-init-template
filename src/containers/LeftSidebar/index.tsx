@@ -26,8 +26,6 @@ const LeftSidebar: React.FC<Props> = ({t}) => {
             <Link to={route.path}>{t(route.name)}</Link>
           </li>
         ))}
-        <Link to={'/set-bct2-parameter'}>測試</Link>
-        <a>aaaa</a>
       </ul>
     </div>
   );

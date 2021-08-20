@@ -19,10 +19,8 @@ function Main(props: any) {
 
   return (
     <div id="main">
-      <div style={{position: 'relative', zIndex: 999}}>
       <Header />
-      </div>
-      <div id="sidebar-with-content"  style={{position: 'relative', zIndex: -999}}>
+      <div id="sidebar-with-content">
         <Router>
           <LeftSidebar children={routes}/>
           <div id="main-content" >

@@ -10,6 +10,7 @@
     flex-grow: 1;
     flex-direction: row;
     height: calc(100vh - 6rem);
+    z-index: 11;
 }
 
 #main-content {
@@ -17,4 +18,5 @@
     padding: 16px;
     height: calc(100vh - 6rem);
     overflow: auto;
+    z-index: 10;
 }
