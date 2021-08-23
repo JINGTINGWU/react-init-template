@@ -5,9 +5,9 @@
 }
 
 #leftSidebar a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 8px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.5rem;
     color: #6EE7B7;
     display: block;
     transition: 0.3s;
@@ -22,5 +22,37 @@
 }
 
 #leftSidebar.close {
-    width: 0rem;
+    width: 5rem;
+}
+
+#leftSidebar .item-icon {
+    transition: 0.5s;
+}
+
+#leftSidebar .item-icon.open{
+    margin-left: 0rem;
+}
+
+#leftSidebar .item-icon.close{
+    margin-left: 1rem;
+}
+
+#leftSidebar .item-title {
+    transition: 0.5s;
+}
+
+#leftSidebar .item-title.open {
+    animation: show-item-title 0s 0.5s forwards;
+}
+
+#leftSidebar .item-title.close{
+    transition: 0.1s;
+    display: none;
+    color: yellow;
+}
+
+@keyframes show-item-title{
+      to {
+        display: block;
+      }
 }

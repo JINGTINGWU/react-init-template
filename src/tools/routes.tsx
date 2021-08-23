@@ -15,12 +15,14 @@ const routes = [
     path: "/set-bct1-parameter",
     name: 'set-bct1-parameter',
     isLeftMenu: true,
+    icon: () => <i className="bi bi-dice-1 text-2xl"></i>,
     main: () => <SetBct1Parameter />
   },
   {
     path: "/set-bct2-parameter",
     name: 'set-bct2-parameter',
     isLeftMenu: true,
+    icon: () => <i className="bi bi-dice-2 text-2xl"></i>,
     main: () => <SetBct2Parameter />
   }
 ];
