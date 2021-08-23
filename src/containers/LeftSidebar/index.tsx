@@ -19,13 +19,17 @@ const LeftSidebar: React.FC<Props> = ({t}) => {
   const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
 
   return (
-    <div id="leftSidebar" className={`leftSidebar ${isOpenSidebar? 'open': 'close'}`}>
+    <div id="leftSidebar" className={`leftSidebar bg-gray-900 pt-4 ${isOpenSidebar? 'open': 'close'}`}>
       <ul style={{ listStyleType: "none", padding: 0 }}>
-        {routes.map((route, index) => (
-          <li key={`left-bar-li-${index}`}>
-            <Link to={route.path}>{t(route.name)}</Link>
-          </li>
-        ))}
+        {routes.map((route, index) => {
+          if(route.isLeftMenu) {
+            return (
+              <li key={`left-bar-li-${index}`}>
+                <Link to={route.path}>{t(route.name)}</Link>
+              </li>
+            )
+          }
+        })}
       </ul>
     </div>
   );

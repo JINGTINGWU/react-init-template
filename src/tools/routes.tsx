@@ -8,16 +8,19 @@ const routes = [
   {
     path: "/my-info",
     name: 'my-info',
+    isLeftMenu: false,
     main: () => <MyInfo />
   },
   {
     path: "/set-bct1-parameter",
     name: 'set-bct1-parameter',
+    isLeftMenu: true,
     main: () => <SetBct1Parameter />
   },
   {
     path: "/set-bct2-parameter",
     name: 'set-bct2-parameter',
+    isLeftMenu: true,
     main: () => <SetBct2Parameter />
   }
 ];

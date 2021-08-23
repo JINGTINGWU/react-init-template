@@ -10,8 +10,6 @@ import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 import routes from "../../tools/routes";
 import './index.css';
 
-import { Dropdown } from 'react-bootstrap';
-
 function Main(props: any) {
   const { t } = props;
 
@@ -19,9 +17,10 @@ function Main(props: any) {
 
   return (
     <div id="main">
-      <Header />
-      <div id="sidebar-with-content">
-        <Router>
+      <Router>
+        <Header />
+        <div id="sidebar-with-content">
+        
           <LeftSidebar children={routes}/>
           <div id="main-content" >
             <Suspense fallback={loading()}>
@@ -39,9 +38,9 @@ function Main(props: any) {
               </Switch>
             </Suspense>
           </div>
-        </Router>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </Router>
     </div>
   );
 }

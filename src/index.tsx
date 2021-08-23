@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './tools/i18n';
-import 'bootstrap/scss/bootstrap.scss';
 
 ReactDOM.render(
   <React.StrictMode>
