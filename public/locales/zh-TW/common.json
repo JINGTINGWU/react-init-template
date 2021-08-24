@@ -4,8 +4,13 @@
     "zh-TW": "繁體中文",
     "submit": "送出",
     "query": "查詢",
-    "set-bct1-parameter": "BCT 1 參數設定設定",
-    "set-bct2-parameter": "BCT 2 參數設定設定",
+    "set-parameter": "參數設定",
+    "set-bct1-parameter": "BCT 1",
+    "set-bct2-parameter": "BCT 2",
     "my-info": "我的資訊",
-    "logout": "登出"
+    "logout": "登出",
+    "page404": {
+      "title": "網頁沒有發現",
+      "message": "我們感到抱歉，但是您要訪問的頁面不存在。"
+    }
   }

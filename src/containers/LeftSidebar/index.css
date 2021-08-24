@@ -1,7 +1,7 @@
 #leftSidebar {
     height: calc(100vh - 6rem);
-    overflow-x: hidden;
-    transition: 0.5s;
+    overflow-x: visible;
+    transition: 0.3s;
 }
 
 #leftSidebar a {
@@ -10,7 +10,7 @@
     font-size: 1.5rem;
     color: #6EE7B7;
     display: block;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 #leftSidebar a:hover {
@@ -22,37 +22,32 @@
 }
 
 #leftSidebar.close {
-    width: 5rem;
+    width: 5.75rem;
 }
 
-#leftSidebar .item-icon {
-    transition: 0.5s;
+#leftSidebar .group .item-icon {
+    transition: 0.1s;
 }
 
-#leftSidebar .item-icon.open{
+#leftSidebar .group.open .item-icon{
     margin-left: 0rem;
 }
 
-#leftSidebar .item-icon.close{
+#leftSidebar .group.close .item-icon{
     margin-left: 1rem;
 }
 
-#leftSidebar .item-title {
-    transition: 0.5s;
+
+#leftSidebar .group.open .item-title {
+    display: block;
 }
 
-#leftSidebar .item-title.open {
-    animation: show-item-title 0s 0.5s forwards;
-}
-
-#leftSidebar .item-title.close{
-    transition: 0.1s;
+#leftSidebar .group.close .item-title{
     display: none;
-    color: yellow;
 }
 
-@keyframes show-item-title{
-      to {
-        display: block;
-      }
+#leftSidebar .group.close:hover .item-title{
+    display: block;
+    color: #6EE7B7;
+    background-color: #111827;
 }

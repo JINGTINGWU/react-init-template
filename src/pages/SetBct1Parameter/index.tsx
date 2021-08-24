@@ -4,7 +4,16 @@ import { withTranslation } from 'react-i18next';
 function SetBct1Parameter(props: any) {
   return (
     <div>
-      SetBct1Parameter
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
+      SetBct1Parameter<br/>
     </div>
   );
 }

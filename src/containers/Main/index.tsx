@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { withTranslation } from 'react-i18next';
-import { BrowserRouter as Router, Redirect, Route, Switch, Link } from 'react-router-dom';
+import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -17,30 +17,33 @@ function Main(props: any) {
 
   return (
     <div id="main">
-      <Router>
-        <Header />
-        <div id="sidebar-with-content">
-        
-          <LeftSidebar children={routes}/>
-          <div id="main-content" >
-            <Suspense fallback={loading()}>
-              <Switch>
-                {routes.map((route, index) => (
-                  // Render more <Route>s with the same paths as
-                  // above, but different components this time.
-                  <Route
-                    key={index}
-                    path={route.path}
-                    children={<route.main />}
-                  />
-                ))}
-                <Redirect from="/" to="/my-info" />
-              </Switch>
-            </Suspense>
-          </div>
+      <Header />
+      <div id="sidebar-with-content" className="z-0">
+        <div className="z-50">
+          <LeftSidebar children={routes} />
         </div>
-        <Footer />
-      </Router>
+        <div id="main-content" className="z-10">
+          <Suspense fallback={loading()}>
+            <Switch>
+              {routes.map((route, index) => {
+                if (route.path) {
+                  return (
+                    // Render more <Route>s with the same paths as
+                    // above, but different components this time.
+                    <Route
+                      key={index}
+                      path={route.path}
+                      children={<route.main />}
+                    />
+                  )
+                }
+              })}
+              <Redirect from="/" to="/my-info" />
+            </Switch>
+          </Suspense>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
