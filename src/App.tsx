@@ -18,24 +18,14 @@ function App(props: any) {
     <RecoilRoot>
       <HashRouter>
         <Switch>
+          <Route path="/main" render={props => <Main {...props}/>} />
           <Route exact path="/login" render={props => <Login {...props}/>} />
           <Route exact path="/forgot-password" render={props => <ForgotPassword {...props}/>} />
-          <Route exact path="/reset-password" render={props => <ResetPassword {...props}/>} />
           <Route exact path="/404" render={props => <Page404 {...props}/>} />
           <Route exact path="/500" render={props => <Page500 {...props}/>} />
-          <Route path="/" render={props => <Main {...props}/>} />
-          {/* <Route path="/">
-            <Redirect to="/main" />
-          </Route> */}
           <Route path="*">
             <Redirect to="/404" />
           </Route>
-          {/* <Route path="/">
-            <Redirect to="/main" />
-          </Route>
-          <Route path="/#">
-            <Redirect to="/main" />
-          </Route> */}
         </Switch>
       </HashRouter>
     </RecoilRoot>

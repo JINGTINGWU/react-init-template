@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { withTranslation } from 'react-i18next';
 import { Menu, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 import './index.css';
@@ -17,6 +17,7 @@ const RightMenu: React.FC<Props> = ({
     onClick
 }) => {
     const [isOpenSidebar, setOpenSidebar] = useRecoilState(sidebarStatus);
+    let { path, url } = useRouteMatch();
 
     return (
         <Menu as="div" className="relative inline-block text-left">
@@ -39,7 +40,8 @@ const RightMenu: React.FC<Props> = ({
                         <Menu.Item>
                             {({ active }) => (
                                 <Link className={`text-2xl ${active ? 'bg-purple-400 text-white' : 'text-gray-900'}
-                                    group flex rounded-md items-center w-full px-1 py-1 text-sm`} to={'/my-infoaaa'}>
+                                    group flex rounded-md items-center w-full px-1 py-1 text-sm`} 
+                                    to={`${url}my-info`}>
                                     <div className="mr-4 w-8">
                                         <i className={`bi bi-info-circle`}></i>
                                     </div>

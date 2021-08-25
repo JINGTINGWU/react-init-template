@@ -6,7 +6,7 @@ import { useRecoilState } from 'recoil';
 import { sidebarStatus } from '../../tools/recoil/sidebarStatus';
 
 import './index.css';
-import routes from "../../tools/routes";
+import routes from "../../tools/routes/LeftSidebarRoutes";
 
 import { useRouteMatch, Link } from 'react-router-dom';
 
@@ -80,13 +80,14 @@ const LeftSidebar: React.FC<Props> = ({t}) => {
                           <div className={`item-icon pl-1 mr-4 w-8`}>
                             {route.icon ? <route.icon />: <span />}
                           </div>
-                          <span className={`item-title whitespace-nowrap rounded-md px-1`}>
+                          <span className={`item-title rounded-md px-1`}>
                             {t(route.name)}
                           </span>
                         </div>
                       </Link>
                     </li>
                   )
+                  
                 }
               }
             }
