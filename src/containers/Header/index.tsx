@@ -13,7 +13,6 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({t, i18n}) => { 
-console.log(i18n);
   return (
     <header className={`h-14 bg-blue-300 pl-3 pr-3 pt-2 pb-2 z-50 overflow-visible`}>
       <MenuIconButton/>

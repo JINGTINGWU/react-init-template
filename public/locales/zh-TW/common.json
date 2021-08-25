@@ -4,13 +4,25 @@
     "zh-TW": "繁體中文",
     "submit": "送出",
     "query": "查詢",
-    "set-parameter": "參數設定",
-    "set-bct1-parameter": "BCT 1",
-    "set-bct2-parameter": "BCT 2",
+
     "my-info": "我的資訊",
     "logout": "登出",
     "page404": {
       "title": "網頁沒有發現",
       "message": "我們感到抱歉，但是您要訪問的頁面不存在。"
+    },
+    "parameter": {
+      "set-parameter": "參數設定",
+      "bct1": "BCT 1",
+      "bct2": "BCT 2",
+      "gti-mini": "GTI & MINI",
+      "gti-mini-batch": "GTI & MINI 批次",
+      "spectrum": "水頻譜(GTI 5)",
+      "spectrumAndValve": "水頻譜和閘道(GTI 6)"
+    },
+    "firmware": {
+      "firmware-upgrade": "韌體更新",
+      "upgrade_firmware": "更新韌體",
+      "upload_firmware_file": "上傳韌體檔案"
     }
   }

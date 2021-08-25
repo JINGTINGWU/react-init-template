@@ -4,13 +4,25 @@
     "zh-TW": "繁體中文",
     "submit": "Submit",
     "query": "Query",
-    "set-parameter": "Parameters Setter",
-    "set-bct1-parameter": "BCT 1",
-    "set-bct2-parameter": "BCT 2",
+
     "my-info": "My Info.",
     "logout": "Logout",
     "page404": {
       "title": "Oops! Page not found",
       "message": "we are sorry, but the page you requested was not found"
+    },
+    "parameter": {
+      "set-parameter": "Parameters Setter",
+      "bct1": "BCT 1",
+      "bct2": "BCT 2",
+      "gti-mini": "GTI & MINI",
+      "gti-mini-batch": "GTI & MINI Batch",
+      "spectrum": "Spectrum(GTI 5)",
+      "spectrumAndValve": "Spectrum And Valve(GTI 6)"
+    },
+    "firmware": {
+      "firmware-upgrade": "Firmware Upgrade",
+      "upgrade_firmware": "Update Firmware",
+      "upload_firmware_file": "Upload Firmware File"
     }
   }

@@ -1,11 +1,10 @@
 #leftSidebar {
     height: calc(100vh - 6rem);
-    overflow-x: visible;
     transition: 0.3s;
 }
 
 #leftSidebar a {
-    padding: 8px 8px 8px 8px;
+    padding-left: 0.5rem;
     text-decoration: none;
     font-size: 1.5rem;
     color: #6EE7B7;
@@ -14,7 +13,7 @@
 }
 
 #leftSidebar a:hover {
-    color: #F3F4F6;
+    color: #2563EB;
 }
 
 #leftSidebar.open {
@@ -25,29 +24,38 @@
     width: 5.75rem;
 }
 
-#leftSidebar .group .item-icon {
+#leftSidebar.close:hover{
+    width: var(--left-sidebar-width, 0rem);
+}
+
+#leftSidebar .item-icon {
     transition: 0.1s;
 }
 
-#leftSidebar .group.open .item-icon{
+#leftSidebar.open .item-icon{
     margin-left: 0rem;
 }
 
-#leftSidebar .group.close .item-icon{
+#leftSidebar.close .item-icon{
     margin-left: 1rem;
 }
 
 
-#leftSidebar .group.open .item-title {
+#leftSidebar.open .item-title {
     display: block;
 }
 
-#leftSidebar .group.close .item-title{
+#leftSidebar.close .item-title{
     display: none;
 }
 
-#leftSidebar .group.close:hover .item-title{
+#leftSidebar.close:hover .item-title{
     display: block;
-    color: #6EE7B7;
-    background-color: #111827;
+}
+
+#leftSidebar.close .x-mark{
+    margin-left: -1rem;
+}
+#leftSidebar.close:hover .x-mark{
+    margin-left: 0rem;
 }
