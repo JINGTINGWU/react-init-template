@@ -41,7 +41,7 @@ const RightMenu: React.FC<Props> = ({
                             {({ active }) => (
                                 <Link className={`text-2xl ${active ? 'bg-purple-400 text-white' : 'text-gray-900'}
                                     group flex rounded-md items-center w-full px-1 py-1 text-sm`} 
-                                    to={`${url}my-info`}>
+                                    to={`${url}/my-info`}>
                                     <div className="mr-4 w-8">
                                         <i className={`bi bi-info-circle`}></i>
                                     </div>

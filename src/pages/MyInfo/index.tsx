@@ -9,7 +9,7 @@ console.log(path);
   return (
     <div>
       這是我的資訊<br/>
-      <Link className={`text-2xl group flex rounded-md items-center w-full px-1 py-1 text-sm`} to={`/reset-password`}>
+      <Link className={`text-2xl group flex rounded-md items-center w-full px-1 py-1 text-sm`}  to={`${url}/reset-password`}>
                                     <div className="mr-4 w-8">
                                         <i className={`bi bi-info-circle`}></i>
                                     </div>

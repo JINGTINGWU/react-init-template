@@ -24,7 +24,15 @@ function Main(props: any) {
   const { t } = props;
   let { path, url } = useRouteMatch();
   const loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
-console.log(path);
+  console.log(path);
+
+  let token = localStorage.getItem('my-token');
+  console.log(token);
+
+  if(!token){
+    return <Redirect to="/login" />;
+  }
+
   return (
     <div id="main">
       <Header />

@@ -24,5 +24,8 @@
       "firmware-upgrade": "Firmware Upgrade",
       "upgrade_firmware": "Update Firmware",
       "upload_firmware_file": "Upload Firmware File"
+    },
+    "login": {
+      
     }
   }
