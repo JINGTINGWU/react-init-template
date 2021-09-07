@@ -36,9 +36,9 @@ const LeftSidebar: React.FC<Props> = ({t}) => {
                               <div className={`item-icon mr-4 w-8`}>
                                 {route.icon ? <route.icon />: <span />}
                               </div>
-                              <span className={`item-title rounded-md px-1`}>
+                              <div className={`item-title rounded-md px-1`}>
                                 {t(route.name)}
-                              </span>
+                              </div>
                               <div className={`flex items-center`}><i className={`bi ${open? 'bi-x': 'bi-plus'} x-mark text-xs ml-1`}></i></div>
                             </div>
                           </a>

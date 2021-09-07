@@ -42,15 +42,17 @@
 
 
 #leftSidebar.open .item-title {
-    display: block;
+    animation: 0.3s cssShowItemTitle forwards;
 }
 
 #leftSidebar.close .item-title{
-    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
 
 #leftSidebar.close:hover .item-title{
-    display: block;
+    animation: 0.3s cssShowItemTitle forwards;
 }
 
 #leftSidebar.close .x-mark{
@@ -59,3 +61,21 @@
 #leftSidebar.close:hover .x-mark{
     margin-left: 0rem;
 }
+
+@keyframes cssShowItemTitle { 
+    0% {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    50% {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    100% {
+        width: 100%;
+        height: 0;
+        visibility: visible;
+    }
+} 
